@@ -1,0 +1,7 @@
+{
+  "name": "appChatFire",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
