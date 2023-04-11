@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "bd-chatfire": {
+      "hosting": {
+        "app": [
+          "bd-chatfire"
+        ]
+      }
+    },
+    "db-chatfire": {
+      "hosting": {
+        "app": [
+          "db-chatfire"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "db-chatfire"
+  }
+}
