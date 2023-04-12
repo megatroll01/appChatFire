@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import * as firebase from 'firebase/app';
+import 'firebase/firestore';
 import { switchMap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Inject } from '@angular/core';
+
 
 export interface User {
   uid: string;
@@ -25,7 +28,8 @@ export interface Message {
 export class ChatService {
   currentUser: User = null;
 
-  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore) {
+  constructor(@Inject(AngularFireAuth) private afAuth: AngularFireAuth,
+  @Inject(AngularFirestore) private afs: AngularFirestore) {
     this.afAuth.onAuthStateChanged((user) => {
       this.currentUser = user;
     });
